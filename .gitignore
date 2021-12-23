@@ -6,3 +6,5 @@
 *.dll
 *.lib
 *.exe
+# Repeated file that could cause problems in the future
+sierpinski-gasket/AD.h

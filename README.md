@@ -21,3 +21,6 @@ Jk, *unless...*
 - [x] Iterative factorial
 - [x] Recursive factorial TODO: optimize this
 - [x] Palindrome word checker
+- [x] Power by recursion
+- [x] Create an basic tty ASCII drawing library, aparently
+- [ ] Sierpinski Gasket recursion
