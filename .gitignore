@@ -1,0 +1,8 @@
+# General binary files
+*.out
+*.o
+*.so
+*.a
+*.dll
+*.lib
+*.exe
