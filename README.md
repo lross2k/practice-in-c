@@ -26,6 +26,7 @@ Jk, *unless...*
 - [x] Static and Dynamic linking
 - [x] Sierpinski Gasket recursion
 - [x] Merge sort
+- [x] Quick sort
 
 ## TODO
 - Implement linked lists
