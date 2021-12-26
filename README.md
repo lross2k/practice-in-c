@@ -29,6 +29,8 @@ Jk, *unless...*
 - [x] Quick sort
 
 ## TODO
+- Data structures in general
+- Some graph algorithms
 - Implement linked lists
 - Recursive factorial with memoization
 - Fibonacci numbers

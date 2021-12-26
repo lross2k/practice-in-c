@@ -1,5 +1,5 @@
 build :
-	gcc -std=c89 -Wall -Werror -Wshadow -Wextra -pedantic -o quick quick.c
+	gcc -std=c89 -Wall -Werror -Wshadow -Wextra -pedantic -o quick.out quick.c
 
 clean :
-	rm quick
+	rm quick.out

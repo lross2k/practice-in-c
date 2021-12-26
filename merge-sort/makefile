@@ -1,5 +1,5 @@
 build :
-	gcc -std=c89 -Wall -Werror -Wextra -Wshadow -pedantic -o merge merge.c
+	gcc -std=c89 -Wall -Werror -Wextra -Wshadow -pedantic -o merge.out merge.c
 
 clean :
-	rm merge
+	rm merge.out
