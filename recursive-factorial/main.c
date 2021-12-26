@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* No tail recursion */
+/* No memoization */
 int factorial(int n)
 {
     return((n == 0) ? 1 : n*factorial(n - 1));
