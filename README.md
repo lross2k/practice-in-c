@@ -27,11 +27,14 @@ Jk, *unless...*
 - [x] Sierpinski Gasket recursion
 - [x] Merge sort
 - [x] Quick sort
+- [x] Linked list
 
 ## TODO
-- Data structures in general
-- Some graph algorithms
-- Implement linked lists
-- Recursive factorial with memoization
-- Fibonacci numbers
-- Implement hash table
+### Algorithms
+- [ ] Recursive factorial with memoization
+- [ ] Breadth first search
+- [ ] Fibonacci numbers
+### Data structures
+- [ ] Hash table
+### Extra
+- [ ] Use multithreading
