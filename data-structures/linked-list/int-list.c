@@ -1,20 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* This file has a simple implementation of linked lists for int
+ * data types, generics can be easily implemented passing data 
+ * values as void * and passing size_t or an enum as the case 
+ * deciding factor, however I didn't need a whole lib for lists */
 
-struct list_entry {
-    struct list_entry *next;
-    int data;
-};
+#include "AllDS.h"
 
-struct linked_list {
-    struct list_entry *head;
-    struct list_entry *tail;
-    int length;
-};
-
-struct linked_list* linked_list()
+ilist_t* ilist()
 {
-    struct linked_list* new_list = (struct linked_list *) malloc (sizeof(struct linked_list));
+    ilist_t* new_list = (ilist_t *) malloc (sizeof(ilist_t));
     if (!new_list)
     {
         fprintf(stderr, "ERROR: Couldn't allocate linked list\n");
@@ -26,9 +19,9 @@ struct linked_list* linked_list()
     return new_list;
 }
 
-int list_add(struct linked_list* list, int item)
+int ilist_add(ilist_t* list, int item)
 {
-    struct list_entry *tmp = (struct list_entry *) malloc(sizeof(struct list_entry));
+    inode_t *tmp = (inode_t *) malloc(sizeof(inode_t));
     if (!tmp)
     {
         fprintf(stderr, "ERROR: Couldn't allocate space for new item\n");
@@ -58,25 +51,9 @@ int list_add(struct linked_list* list, int item)
     return(0);
 }
 
-/*
-int list_get_index(struct linked_list* list, int index)
+void ilist_free(ilist_t* list)
 {
-    int it = 0;
-    struct list_entry *entry = list->head;
-    while(it < list->length)
-    {
-        if (it == index)
-            return entry->data;
-        entry = entry->next;
-        it++;
-    }
-    return(0);
-}
-*/
-
-void free_list(struct linked_list* list)
-{
-    struct list_entry *current = list->head, *next;
+    inode_t *current = list->head, *next;
     while(current != NULL)
     {
         next = current->next;
@@ -88,10 +65,10 @@ void free_list(struct linked_list* list)
     current = next = NULL;
 }
 
-void list_remove_index(struct linked_list *list, int index)
+void ilist_remove(ilist_t *list, int index)
 {
     int it = 0;
-    struct list_entry *current = list->head, *previous = NULL, *next;
+    inode_t *current = list->head, *previous = NULL, *next;
     next = current->next;
     while(it < list->length)
     {
@@ -114,10 +91,10 @@ void list_remove_index(struct linked_list *list, int index)
     }
 }
 
-void list_set_index(struct linked_list *list, int index, int data)
+void ilist_set(ilist_t *list, int index, int data)
 {
     int it;
-    struct list_entry *current = list->head;
+    inode_t *current = list->head;
     for (it = 0; it < list->length; it++)
     {
         if (it == index)
@@ -126,10 +103,10 @@ void list_set_index(struct linked_list *list, int index, int data)
     }
 }
 
-int list_get_index(struct linked_list *list, int index)
+int ilist_get(ilist_t *list, int index)
 {
     int it;
-    struct list_entry *current = list->head;
+    inode_t *current = list->head;
     for (it = 0; it < list->length; it++)
     {
         if (it == index)
@@ -139,10 +116,10 @@ int list_get_index(struct linked_list *list, int index)
     return(0);
 }
 
-void print_list(struct linked_list *list)
+void ilist_print(ilist_t *list)
 {
     int it;
-    struct list_entry *current = list->head;
+    inode_t *current = list->head;
     printf("(");
     for (it = 0; it < list->length; it++)
     {
@@ -150,30 +127,4 @@ void print_list(struct linked_list *list)
         current = current->next;
     }
     printf("\b\b)\n");
-}
-
-int main(void)
-{
-    struct linked_list *list = linked_list();
-
-    list_add(list, 5);
-    list_add(list, 4);
-    list_add(list, 3);
-    list_add(list, 2);
-    list_add(list, 1);
-
-    print_list(list);
-
-    printf("The index 3 has %i\n", list_get_index(list, 3));
-
-    list_set_index(list, 3, 9);
-
-    printf("Now the index 3 has %i\n", list_get_index(list, 3));
-
-    list_remove_index(list, 2);
-    print_list(list);
-
-    free_list(list);
-
-    return(0);
 }

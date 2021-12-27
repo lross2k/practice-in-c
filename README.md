@@ -1,40 +1,47 @@
 # Practice in C89
-I was bored so here I am doing basic stuff
+This will be my way of learning and practicing the basics in 
+different languages, (simple tasks to test multiple language 
+features) C was the first one bc I like it and 89 bc this 
+way I can compare it to modern C later on.
 
-I realized this could be applied to other languages, so this 
-"Practice in ..." might be my new way of learning or improving 
-in other languages.
+I don't intend to reinvent the wheel, I just want to know 
+how it works.
 
-Keep an eye out for my upcoming "Practice in 8080 ASM for MS DOS" 
-or "Practice in Brainf*ck"
-
-Jk, *unless...*
-
-## Covered subjects
-- [x] Function pointers
-- [x] Generic function arguments
-- [x] Variable argument lists 
-- [x] Emulating methods inside structs
-- [x] Binary search
-- [x] Selection sort
-- [x] Insert sort
-- [x] Iterative factorial
-- [x] Recursive factorial
-- [x] Palindrome word checker
-- [x] Power by recursion
-- [x] Create an basic tty ASCII Drawing library, aparently
-- [x] Static and Dynamic linking
-- [x] Sierpinski Gasket recursion
-- [x] Merge sort
-- [x] Quick sort
-- [x] Linked list
+## DONE
+### Basic language usage
+- The basics (unions, pointers, etc...)
+- Function pointers
+- Generic function arguments
+- Variable argument lists 
+- Emulating methods inside structs
+- Static and Dynamic linking
+### Algorithms
+- Binary search
+- Selection sort
+- Insert sort
+- Merge sort
+- Quick sort
+- Iterative factorial
+- Recursive factorial
+- Palindrome word checker
+- Power by recursion
+### Data structures
+- Linked list
+- Queue list
+### Programs/utils
+- Basic Terminal Drawing (BTD) library 
+- Draw Sierpinski Gasket by recursion
 
 ## TODO
+### Basic language usage
+- [ ] Use multithreading
+### Data structures
+- [ ] Hash table
 ### Algorithms
 - [ ] Recursive factorial with memoization
 - [ ] Breadth first search
 - [ ] Fibonacci numbers
-### Data structures
-- [ ] Hash table
-### Extra
-- [ ] Use multithreading
+### Programs/utils
+- [ ] Get a minimal window/GUI in one OS
+- [ ] Start an HTTP server
+- [ ] Conway's Game of Life
