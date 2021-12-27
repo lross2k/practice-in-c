@@ -25,9 +25,11 @@ how it works.
 - Recursive factorial
 - Palindrome word checker
 - Power by recursion
+- Breadth-First search (BFS)
 ### Data structures
 - Linked list
 - Queue list
+- Basic graph manipulation
 ### Programs/utils
 - Basic Terminal Drawing (BTD) library 
 - Draw Sierpinski Gasket by recursion
