@@ -15,6 +15,7 @@ how it works.
 - Variable argument lists 
 - Emulating methods inside structs
 - Static and Dynamic linking
+- Use <pthread.h> 
 ### Algorithms
 - Binary search
 - Selection sort
@@ -23,7 +24,6 @@ how it works.
 - Quick sort
 - Iterative factorial
 - Recursive factorial
-- Palindrome word checker
 - Power by recursion
 - Breadth-First search (BFS)
 ### Data structures
@@ -33,15 +33,14 @@ how it works.
 ### Programs/utils
 - Basic Terminal Drawing (BTD) library 
 - Draw Sierpinski Gasket by recursion
+- Palindrome word checker
 
 ## TODO
-### Basic language usage
-- [ ] Use multithreading
 ### Data structures
 - [ ] Hash table
+- [ ] Stacks
+- [ ] Heaps
 ### Algorithms
-- [ ] Recursive factorial with memoization
-- [ ] Breadth first search
 - [ ] Fibonacci numbers
 ### Programs/utils
 - [ ] Get a minimal window/GUI in one OS
