@@ -31,6 +31,7 @@ how it works.
 - Queue list
 - Basic graph theory
 - Hash table
+- Stack
 ### Programs/utils
 - Basic Terminal Drawing (BTD) library 
 - Draw Sierpinski Gasket by recursion
@@ -38,11 +39,10 @@ how it works.
 
 ## TODO
 ### Data structures
-- [ ] Stacks
-- [ ] Heaps
+- Heap
 ### Algorithms
-- [ ] Fibonacci numbers
+- Fibonacci numbers
 ### Programs/utils
-- [ ] Get a minimal window/GUI in one OS
-- [ ] Start an HTTP server
-- [ ] Conway's Game of Life
+- Create a window in any OS
+- Super basic sockets server/client 
+- Conway's Game of Life

@@ -72,4 +72,26 @@ unsigned int htnode_construct(htnode_t *node, void *key, void *value, size_t ksi
 unsigned int ht_free(htable_t *table);
 unsigned int ht_print(htable_t *table);
 
+/************************
+ *        Stacks        *
+ ************************/
+
+struct stack_entry {
+    void *value;
+    struct stack_entry *next;
+};
+
+typedef struct stack {
+    unsigned int length;
+    size_t data_size;
+    struct stack_entry *first;
+} stack_t;
+
+unsigned int stack_push(struct stack *stck, void *value);
+struct stack_entry * stack_pop(struct stack *stck);
+unsigned int new_stack(struct stack *stck, size_t data_size);
+unsigned int new_stack_entry(struct stack_entry *entry, void *value);
+unsigned int stack_print(struct stack *stck);
+unsigned int stack_free(struct stack *stck);
+
 #endif /*ALL_DS_H*/
