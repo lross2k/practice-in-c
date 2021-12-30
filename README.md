@@ -29,7 +29,8 @@ how it works.
 ### Data structures
 - Linked list
 - Queue list
-- Basic graph manipulation
+- Basic graph theory
+- Hash table
 ### Programs/utils
 - Basic Terminal Drawing (BTD) library 
 - Draw Sierpinski Gasket by recursion
@@ -37,7 +38,6 @@ how it works.
 
 ## TODO
 ### Data structures
-- [ ] Hash table
 - [ ] Stacks
 - [ ] Heaps
 ### Algorithms

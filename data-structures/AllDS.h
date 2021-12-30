@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 /************************
  *     Linked lists     *
@@ -13,7 +14,7 @@ struct int_node {
     int data;
 };
 
-/* Syntactic sugar for people that don'w want to write 'struct' */
+/* Syntactic sugar for people that don't want to write 'struct' */
 typedef struct int_node inode_t;
 
 typedef struct int_list {
@@ -42,5 +43,37 @@ struct queue_by_list * new_queue();
 int queue_is_empty(struct queue_by_list *queue);
 void enqueue(struct queue_by_list *queue, int item);
 int dequeue(struct queue_by_list *queue);
+
+/************************
+ *      Hash Tables     *
+ ************************/
+
+struct ht_node {
+    void *key;
+    void *value;
+    size_t key_size;
+    struct ht_node *next;
+};
+
+typedef struct ht_struct {
+    struct ht_node **array;
+    uint32_t length;
+} htable_t;
+
+typedef struct ht_node htnode_t; /* Sugar */
+
+enum type_sizes {
+    INT = sizeof(int),
+    STR = sizeof(char *)
+};
+
+uint32_t hash(void *key, size_t size, uint32_t array_size);
+uint32_t ht_construct(htable_t *table, uint32_t array_size);
+uint32_t ht_add(htable_t *table, htnode_t *node);
+htnode_t * ht_get(htable_t *table, void *key, size_t key_s);
+htnode_t * ht_remove(htable_t *table, void *key, size_t size);
+uint32_t htnode_construct(htnode_t *node, void *key, void *value, size_t ksize);
+uint32_t ht_free(htable_t *table);
+uint32_t ht_print(htable_t *table);
 
 #endif /*ALL_DS_H*/
