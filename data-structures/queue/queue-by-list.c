@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "AllDS.h"
 
 struct queue_by_list * new_queue()

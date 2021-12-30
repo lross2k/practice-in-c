@@ -8,9 +8,9 @@
 #define STRCAST(VAL) (char*)VAL
 #define INTCAST(VAL) *((int*)VAL)
 
-uint32_t hash(void *key, size_t size, uint32_t array_size)
+unsigned int hash(void *key, size_t size, unsigned int array_size)
 {
-    uint32_t hash_value = 0;
+    unsigned int hash_value = 0;
     char *str;
     switch(size) {
     case INT:
@@ -26,9 +26,9 @@ uint32_t hash(void *key, size_t size, uint32_t array_size)
     return hash_value;
 }
 
-uint32_t ht_construct(htable_t *table, uint32_t array_size)
+unsigned int ht_construct(htable_t *table, unsigned int array_size)
 {
-    uint32_t i;
+    unsigned int i;
     /* Allocate struct array to heap memory */
     htnode_t **the_array = (htnode_t **) malloc(sizeof(htnode_t)*array_size);
     /* Initialize the array to NULL */
@@ -56,9 +56,9 @@ int nodecmp(htnode_t *table_node, void *key, size_t key_size)
     }
 }
 
-uint32_t ht_add(htable_t *table, htnode_t *node)
+unsigned int ht_add(htable_t *table, htnode_t *node)
 {
-    uint32_t hashed = hash(node->key, node->key_size, table->length);    
+    unsigned int hashed = hash(node->key, node->key_size, table->length);    
     htnode_t *next = NULL;
     if (table->array[hashed] == NULL)
     {
@@ -81,7 +81,7 @@ uint32_t ht_add(htable_t *table, htnode_t *node)
     return(0);
 }
 
-uint32_t htnode_construct(htnode_t *node, void *key, void *value, size_t ksize)
+unsigned int htnode_construct(htnode_t *node, void *key, void *value, size_t ksize)
 {
     node->key = key;
     node->value = value;
@@ -92,7 +92,7 @@ uint32_t htnode_construct(htnode_t *node, void *key, void *value, size_t ksize)
 
 htnode_t * ht_get(htable_t *table, void *key, size_t key_s)
 {
-    uint32_t hashed = hash(key, key_s, table->length);    
+    unsigned int hashed = hash(key, key_s, table->length);    
     htnode_t *next = NULL;
     if (table->array[hashed] == NULL)
         return NULL;
@@ -108,7 +108,7 @@ htnode_t * ht_get(htable_t *table, void *key, size_t key_s)
 
 htnode_t * ht_remove(htable_t *table, void *key, size_t key_s)
 {
-    uint32_t hashed = hash(key, key_s, table->length);    
+    unsigned int hashed = hash(key, key_s, table->length);    
     htnode_t *next= NULL;
     if (table->array[hashed] == NULL)
         return(NULL);
@@ -139,9 +139,9 @@ void htnode_print(htnode_t *node)
     }   
 }
 
-uint32_t ht_print(htable_t *table)
+unsigned int ht_print(htable_t *table)
 {
-    uint32_t i;
+    unsigned int i;
     htnode_t *next = NULL;
 
     printf("\nHash Table Start");
@@ -164,7 +164,7 @@ uint32_t ht_print(htable_t *table)
     return(0);   
 }
 
-uint32_t ht_free(htable_t *table)
+unsigned int ht_free(htable_t *table)
 {
     if (table != NULL && table->array != NULL)
     {

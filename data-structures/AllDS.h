@@ -1,10 +1,6 @@
 #ifndef ALL_DS_H
 #define ALL_DS_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-
 /************************
  *     Linked lists     *
  ************************/
@@ -57,7 +53,7 @@ struct ht_node {
 
 typedef struct ht_struct {
     struct ht_node **array;
-    uint32_t length;
+    unsigned int length;
 } htable_t;
 
 typedef struct ht_node htnode_t; /* Sugar */
@@ -67,13 +63,13 @@ enum type_sizes {
     STR = sizeof(char *)
 };
 
-uint32_t hash(void *key, size_t size, uint32_t array_size);
-uint32_t ht_construct(htable_t *table, uint32_t array_size);
-uint32_t ht_add(htable_t *table, htnode_t *node);
+unsigned int hash(void *key, size_t size, unsigned int array_size);
+unsigned int ht_construct(htable_t *table, unsigned int array_size);
+unsigned int ht_add(htable_t *table, htnode_t *node);
 htnode_t * ht_get(htable_t *table, void *key, size_t key_s);
 htnode_t * ht_remove(htable_t *table, void *key, size_t size);
-uint32_t htnode_construct(htnode_t *node, void *key, void *value, size_t ksize);
-uint32_t ht_free(htable_t *table);
-uint32_t ht_print(htable_t *table);
+unsigned int htnode_construct(htnode_t *node, void *key, void *value, size_t ksize);
+unsigned int ht_free(htable_t *table);
+unsigned int ht_print(htable_t *table);
 
 #endif /*ALL_DS_H*/

@@ -3,6 +3,8 @@
  * values as void * and passing size_t or an enum as the case 
  * deciding factor, however I didn't need a whole lib for lists */
 
+#include <stdio.h>
+#include <stdlib.h>
 #include "AllDS.h"
 
 ilist_t* ilist()
