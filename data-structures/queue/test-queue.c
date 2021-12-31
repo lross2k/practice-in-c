@@ -9,6 +9,9 @@ int main(void)
     printf("Should be 0 => %i\n", queue_is_empty(queue));
     enqueue(queue, 4);
     enqueue(queue, 2);
+    queue_print(queue);
     printf("Should be 9 => %i\n", dequeue(queue));
+    queue_print(queue);
+    queue_free(queue);
     return(0);
 }

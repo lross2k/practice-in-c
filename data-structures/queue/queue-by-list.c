@@ -19,7 +19,7 @@ struct queue_by_list * new_queue()
 int queue_is_empty(struct queue_by_list *queue)
 {
     if (!queue)
-        return(-1);
+        return(1);
     return(queue->queue_list->length == 0);
 }
 
@@ -33,4 +33,20 @@ int dequeue(struct queue_by_list *queue)
     int val = ilist_get(queue->queue_list, 0);
     ilist_remove(queue->queue_list, 0);
     return val;
+}
+
+/* Could be inline, but... C89 */
+void queue_print(struct queue_by_list *queue)
+{
+    ilist_print(queue->queue_list);
+}
+
+int queue_free(struct queue_by_list *queue)
+{
+    if (queue == NULL)
+        return(1);
+    ilist_free(queue->queue_list);
+    free(queue);
+    queue = NULL;
+    return(0);
 }

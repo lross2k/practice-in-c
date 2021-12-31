@@ -29,20 +29,17 @@ how it works.
 ### Data structures
 - Linked list
 - Queue list
-- Basic graph theory
+- Basic graph
 - Hash table
 - Stack
+- Binary tree
 ### Programs/utils
 - Basic Terminal Drawing (BTD) library 
 - Draw Sierpinski Gasket by recursion
 - Palindrome word checker
 
 ## TODO
-### Data structures
-- Heap
+### Basic language usage
+- Basic sockets test 
 ### Algorithms
 - Fibonacci numbers
-### Programs/utils
-- Create a window in any OS
-- Super basic sockets server/client 
-- Conway's Game of Life

@@ -31,14 +31,16 @@ void ilist_print(ilist_t *list);
  *        Queues        *
  ************************/
 
-struct queue_by_list {
+typedef struct queue_by_list {
     ilist_t *queue_list;
-};
+} iqueue_t;
 
 struct queue_by_list * new_queue();
 int queue_is_empty(struct queue_by_list *queue);
 void enqueue(struct queue_by_list *queue, int item);
 int dequeue(struct queue_by_list *queue);
+void queue_print(struct queue_by_list *queue);
+int queue_free(struct queue_by_list *queue);
 
 /************************
  *      Hash Tables     *
@@ -93,5 +95,35 @@ unsigned int new_stack(struct stack *stck, size_t data_size);
 unsigned int new_stack_entry(struct stack_entry *entry, void *value);
 unsigned int stack_print(struct stack *stck);
 unsigned int stack_free(struct stack *stck);
+
+/************************
+ *     Binary trees     *
+ ************************/
+
+struct bt_node {
+    int value;
+    struct bt_node *left, *right;
+};
+
+/* Quickly implement queue for bt_node */
+struct btnq_node {
+    struct bt_node *val;
+    struct btnq_node *next;
+};
+
+struct btn_queue {
+    struct btnq_node *head, *tail;
+};
+
+unsigned int new_btn_queue(struct btn_queue *queue);
+unsigned int btn_enqueue(struct btn_queue *queue, struct bt_node *node);
+struct bt_node * btn_dequeue(struct btn_queue *queue);
+unsigned int btn_queue_is_empty(struct btn_queue *queue);
+unsigned int btn_queue_print(struct btn_queue *queue);
+struct btn_queue * btn_queue_free(struct btn_queue *queue);
+
+void inorder_traversal(struct bt_node *root);
+void list_to_bt(struct bt_node *root, inode_t *list);
+struct bt_node * new_bt_node(int val);
 
 #endif /*ALL_DS_H*/
